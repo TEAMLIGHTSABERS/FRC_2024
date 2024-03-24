@@ -70,7 +70,12 @@ public class RobotContainer {
     configureButtonBindings();
 
     SmartDashboard.putData("Launcher Wheel Test", m_launcher.testFlyWheels());
-    SmartDashboard.putData("LUp-1000", m_launcher.raiseLCR1000());
+ 
+    // Add Button to SmartDashboard with a RunCommand that executes a "void" method/function.
+    SmartDashboard.putData("LUp-1000", 
+      new RunCommand(() -> m_launcher.raiseLCR1000(), m_launcher));
+
+    // Add Buttons to the SmartDashboard that executes a "command" methods/functions.
     SmartDashboard.putData("LUp-100", m_launcher.raiseLCR100());
     SmartDashboard.putData("LDn-1000", m_launcher.downLC1000());
     SmartDashboard.putData("LDn-100", m_launcher.downLC100());

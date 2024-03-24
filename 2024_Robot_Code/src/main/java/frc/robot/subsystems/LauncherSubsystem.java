@@ -189,22 +189,9 @@ public Command launchNote(IntakeSubsystem _Intake) {
 *
 * @return The riseUp1000 command
 */
-public Command raiseLCR1000(){
-  Command riseUp1000 = 
-    new Command() {
-      @Override
-      public void initialize() {
-        /* Start the Launcher Wheels and the Launch timer. */
-        leftCmdWheelRate += 1000; 
-       }
-
-      @Override
-      public boolean isFinished() {
-        return true;
-      }
-    };
-
-    return riseUp1000;
+public void raiseLCR1000(){
+  // Raise the Left Wheel Rate by 1000 RPM
+  leftCmdWheelRate += 1000; 
 };
 
 /**
